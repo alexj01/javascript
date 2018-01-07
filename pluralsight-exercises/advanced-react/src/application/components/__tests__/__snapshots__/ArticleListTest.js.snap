@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleList renders correctly 1`] = `
+Array [
+  <ArticleContainer
+    article={
+      Object {
+        "body": "1234helloagain",
+        "date": "Sun Jul 10 2016",
+        "id": "a",
+        "title": "hello",
+      }
+    }
+  />,
+  <ArticleContainer
+    article={
+      Object {
+        "body": "1234helloagain",
+        "date": "Sun Jul 10 2016",
+        "id": "b",
+        "title": "hello",
+      }
+    }
+  />,
+]
+`;

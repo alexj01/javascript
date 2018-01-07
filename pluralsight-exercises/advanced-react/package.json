@@ -1,0 +1,56 @@
+{
+  "name": "advanced-react",
+  "version": "1.0.0",
+  "main": "src/server/server.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "NODE_PATH=./src PORT=8080 pm2 start src/server/server.js --interpreter babel-node --watch --name appDev",
+    "debug": "PORT=8080 babel-node src/server/server.js",
+    "dev-webpack": "webpack -wd",
+    "test": "jest --watchAll",
+    "verify-tests": "jest --coverage",
+    "build-webpack": "webpack -p",
+    "build-node": "babel src -d build --copy-files",
+    "prod-start": "NODE_ENV=production NODE_PATH=./build PORT=3000 pm2 start build/server/server.js -i max --name appProd"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      ["env",{"targets": {"node": "current"}}]
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "8.0.1",
+    "enzyme": "3.1.0",
+    "enzyme-adapter-react-16": "1.0.2",
+    "eslint": "4.8.0",
+    "eslint-plugin-react": "7.4.0",
+    "jest": "21.2.1",
+    "jest-cli": "21.2.1",
+    "prop-types": "15.6.0",
+    "react-test-renderer": "16.0.0"
+  },
+  "dependencies": {
+    "axios": "0.16.2",
+    "babel-cli": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-polyfill": "6.26.0",
+    "babel-preset-env": "1.6.0",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-2": "6.24.1",
+    "ejs": "2.5.7",
+    "express": "4.16.1",
+    "lodash.debounce": "4.0.8",
+    "lodash.pickby": "4.6.0",
+    "nodemon": "1.12.1",
+    "pm2": "2.7.2",
+    "proptypes": "1.1.0",
+    "react": "16.0.0",
+    "react-dom": "16.0.0",
+    "webpack": "3.6.0"
+  }
+}
